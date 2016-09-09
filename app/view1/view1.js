@@ -46,7 +46,7 @@ angular.module('myApp.view1', ['ngRoute','ngStomp'])
 
         // frame = CONNECTED headers
         .then(function (frame) {
-            var subscription = $stomp.subscribe('/topic/pets', function (message) {
+            $stomp.subscribe('/topic/pets', function (message) {
                 $scope.message = JSON.stringify(message);
                 $scope.$apply();
 
